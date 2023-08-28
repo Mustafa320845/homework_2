@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,15 +10,15 @@ namespace mustafa_karacik
     {
         class BankaHesabi
         {
-            private double bakiye;
+            private int bakiye;
 
-            public double Bakiye
+            public int Bakiye
             {
                 get { return bakiye; }
                 set { bakiye = value; }
             }
 
-            public void ParaCek(double miktar)
+            public void ParaCek(int miktar)
             {
                 if (miktar > bakiye)
                 {
@@ -26,7 +26,7 @@ namespace mustafa_karacik
                 }
                 else
                 {
-                    bakiye -= miktar;
+                    bakiye = miktar;
                     Console.WriteLine($"{miktar} TL çekildi. Yeni bakiye: {bakiye} TL");
                 }
             }
@@ -40,7 +40,7 @@ namespace mustafa_karacik
                 hesap.Bakiye = 1000;
 
                 Console.Write("Çekilecek miktarı girin: ");
-                double miktar = Convert.ToDouble(Console.ReadLine());
+                int miktar = Convert.ToInt32(Console.ReadLine());
 
                 hesap.ParaCek(miktar);
 
